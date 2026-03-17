@@ -1,0 +1,9 @@
+{
+  "title": "example glossary",
+  "ID": 456,
+  "glossary": {
+    "GlossTerm": "Standard Generalized Markup Language",
+    "Acronym": "SGML",
+    "Abbrev": "ISO 8879:1986"
+  }
+}

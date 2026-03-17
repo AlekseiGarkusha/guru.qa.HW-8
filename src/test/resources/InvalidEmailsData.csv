@@ -1,0 +1,6 @@
+test@domain, invalid
+no-at-symbol.com, invalid
+testya@ya., invalid
+test@@ya.ru, invalid
+@@ya.ru, invalid
+Test@.ru, invalid
