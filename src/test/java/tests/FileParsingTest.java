@@ -2,12 +2,13 @@ package tests;
 
 import com.codeborne.pdftest.PDF;
 import com.codeborne.xlstest.XLS;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.opencsv.CSVReader;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.json.Json;
+import tests.model.Glossary;
 
 import java.io.*;
 import java.util.List;
@@ -34,13 +35,11 @@ public class FileParsingTest {
     Assertions.assertEquals("Stefan Bechtold, Sam Brannen, Johannes Link, Matthias Merdes, Marc Philipp, Juliette de Rancourt, Christian Stein", pdf.author);
     System.out.println(downloaded);
 
-
     //  href="/images/Upload/Price-Crimea-Electric-2025.pdf"
   }
 
   @Test
   void xlsFileParsingTest() throws Exception {
-
     open("https://yandex.ru/routing/doc/ru/vrp/example");
 
     File downloaded = $("[href='https://doc-static.yandex.net/src/dev/routing/templates/mvrp-simple-example-ru.xlsx']").download();
@@ -104,9 +103,10 @@ public class FileParsingTest {
       while ((entry = zip.getNextEntry()) != null) {
         System.out.println(entry.getName());
 
-
-        // Домашка - распаковать зип, и прочитать файл.
       }
+
+      // Домашка - распаковать зип, и прочитать файл.
+
     }
   }
 
@@ -127,7 +127,39 @@ public class FileParsingTest {
       Assertions.assertEquals("SGML", inner.get("Acronym").getAsString());
       Assertions.assertEquals("ISO 8879:1986", inner.get("Abbrev").getAsString());
     }
-
     // домашка - сделать с библиотекой jackson
+  }
+
+  @Test
+  void jsonFileParsingImprovedTest() throws Exception {
+    try (
+      Reader reader = new InputStreamReader(cl.getResourceAsStream("test.json")
+      )) {
+      Glossary actual = gson.fromJson(reader, Glossary.class);
+
+      Assertions.assertEquals("example glossary", actual.getTitle());
+      Assertions.assertEquals(456, actual.getID());
+
+      Assertions.assertEquals("Standard Generalized Markup Language", actual.getGlossary().getGlossTerm());
+      Assertions.assertEquals("SGML", actual.getGlossary().getAcronym());
+      Assertions.assertEquals("ISO 8879:1986", actual.getGlossary().getAbbrev());
+    }
+  }
+
+  @Test
+  void jsonFileParsingTestWithLibraryJackson() throws Exception {
+
+    try (
+      Reader reader = new InputStreamReader(cl.getResourceAsStream("test.json")
+      )) {
+      Glossary actual = gson.fromJson(reader, Glossary.class);
+
+      Assertions.assertEquals("example glossary", actual.getTitle());
+      Assertions.assertEquals(456, actual.getID());
+
+      Assertions.assertEquals("Standard Generalized Markup Language", actual.getGlossary().getGlossTerm());
+      Assertions.assertEquals("SGML", actual.getGlossary().getAcronym());
+      Assertions.assertEquals("ISO 8879:1986", actual.getGlossary().getAbbrev());
+    }
   }
 }

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.FileParsingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-16T20:54:00.479Z" hostname="DESKTOP-A8CGM4F" time="0.029">
-  <properties/>
-  <testcase name="jsonFileParsingTest()" classname="tests.FileParsingTest" time="0.029"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

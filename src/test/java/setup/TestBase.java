@@ -25,7 +25,7 @@
 
       Configuration.browser = "chrome";
 //      Configuration.headless = false;
-      Configuration.holdBrowserOpen = true;
+//      Configuration.holdBrowserOpen = true;
       Configuration.reportsFolder = "target/selenide-reports";
       Configuration.timeout = 5000;
       Configuration.textCheck = TextCheck.FULL_TEXT;
