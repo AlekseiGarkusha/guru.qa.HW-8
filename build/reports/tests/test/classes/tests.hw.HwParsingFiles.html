@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">2</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.275s</div>
+<div class="counter">1.549s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="percent">50%</div>
 <p>successful</p>
 </div>
 </td>
@@ -76,37 +76,18 @@
 <a name="parsingCsvFromZip()"></a>
 <h3 class="failures">parsingCsvFromZip()</h3>
 <span class="code">
-<pre>java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.base/java.util.LinkedList.checkElementIndex(LinkedList.java:566)
-	at java.base/java.util.LinkedList.get(LinkedList.java:487)
-	at tests.hw.HwParsingFiles.parsingCsvFromZip(HwParsingFiles.java:60)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="parsingPdfFromZip()"></a>
-<h3 class="failures">parsingPdfFromZip()</h3>
-<span class="code">
-<pre>java.lang.IllegalArgumentException: Invalid PDF file: 
-	at com.codeborne.pdftest.PDF.&lt;init&gt;(PDF.java:76)
-	at com.codeborne.pdftest.PDF.&lt;init&gt;(PDF.java:47)
-	at com.codeborne.pdftest.PDF.&lt;init&gt;(PDF.java:93)
-	at com.codeborne.pdftest.PDF.&lt;init&gt;(PDF.java:97)
-	at tests.hw.HwParsingFiles.parsingPdfFromZip(HwParsingFiles.java:38)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: java.io.IOException: Error: End-of-File, expected line at offset 0
-	at org.apache.pdfbox.pdfparser.BaseParser.readLine(BaseParser.java:1134)
-	at org.apache.pdfbox.pdfparser.COSParser.parseHeader(COSParser.java:1620)
-	at org.apache.pdfbox.pdfparser.COSParser.parsePDFHeader(COSParser.java:1603)
-	at org.apache.pdfbox.pdfparser.PDFParser.parse(PDFParser.java:157)
-	at org.apache.pdfbox.pdfparser.PDFParser.parse(PDFParser.java:136)
-	at com.codeborne.pdftest.PDF.&lt;init&gt;(PDF.java:54)
-	... 7 more
+<pre>org.opentest4j.AssertionFailedError: array lengths differ, expected: &lt;4&gt; but was: &lt;1&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertArrayEquals.assertArraysHaveSameLength(AssertArrayEquals.java:428)
+	at app//org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:335)
+	at app//org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:159)
+	at app//org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:155)
+	at app//org.junit.jupiter.api.Assertions.assertArrayEquals(Assertions.java:1452)
+	at app//tests.hw.HwParsingFiles.parsingCsvFromZip(HwParsingFiles.java:62)
+	at java.base@21.0.7/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.7/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.7/java.util.ArrayList.forEach(ArrayList.java:1596)
 </pre>
 </span>
 </div>
@@ -123,34 +104,22 @@ Caused by: java.io.IOException: Error: End-of-File, expected line at offset 0
 </thead>
 <tr>
 <td class="failures">parsingCsvFromZip()</td>
-<td class="failures">0.067s</td>
+<td class="failures">0.060s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
-<td class="failures">parsingPdfFromZip()</td>
-<td class="failures">0.208s</td>
-<td class="failures">failed</td>
+<td class="success">parsingPdfFromZip()</td>
+<td class="success">1.489s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>ENTRY: [Price-Crimea-Electric-2025.pdf] LENGTH: 328533
-BYTES: 80 114 105 99 101 45 67 114 105 109 101 97 45 69 108 101 99 116 114 105 99 45 50 48 50 53 46 112 100 102 
-ENTRY: [testXlsx.xlsx] LENGTH: 8492
-BYTES: 116 101 115 116 88 108 115 120 46 120 108 115 120 
-ENTRY: [username.csv] LENGTH: 180
-BYTES: 117 115 101 114 110 97 109 101 46 99 115 118 
-Тут отображается название файла: [B@1ae8bcbc
-ENTRY: [Price-Crimea-Electric-2025.pdf] LENGTH: 328533
-BYTES: 80 114 105 99 101 45 67 114 105 109 101 97 45 69 108 101 99 116 114 105 99 45 50 48 50 53 46 112 100 102 
-ENTRY: [testXlsx.xlsx] LENGTH: 8492
-BYTES: 116 101 115 116 88 108 115 120 46 120 108 115 120 
-ENTRY: [username.csv] LENGTH: 180
-BYTES: 117 115 101 114 110 97 109 101 46 99 115 118 
-Тут отображается название файла: [B@6f19ac19
-2026-03-27T04:02:35.678874900Z Test worker ERROR Log4j API could not find a logging provider.
+<pre>Тут отображается название файла: [B@398dada8
+Тут отображается название файла: [B@4ddbbdf8
+2026-03-27T04:38:34.879880200Z Test worker ERROR Log4j API could not find a logging provider.
 </pre>
 </span>
 </div>
@@ -162,7 +131,7 @@ BYTES: 117 115 101 114 110 97 109 101 46 99 115 118
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.0.0</a> at 27 мар. 2026 г., 07:02:35</p>
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at 27 мар. 2026 г., 07:38:36</p>
 </div>
 </div>
 </body>

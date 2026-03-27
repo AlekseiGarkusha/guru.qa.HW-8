@@ -19,16 +19,18 @@ public class HwParsingFiles {
   private ClassLoader cl = FileParsingTest.class.getClassLoader();
 
   private byte[] readEntry(String zipFileName) throws Exception {
-    try (ZipInputStream zip = new ZipInputStream(cl.getResourceAsStream("TestFIles.zip"))) {
+    try (ZipInputStream zis = new ZipInputStream(
+      cl.getResourceAsStream("testHW.zip")
+    )) {
       ZipEntry entry;
-      while ((entry = zip.getNextEntry()) != null) {
-        System.out.println("ENTRY: [" + entry.getName() + "] LENGTH: " + entry.getSize());
-        System.out.print("BYTES: ");
-        for (byte b : entry.getName().getBytes(StandardCharsets.UTF_8)) System.out.print(b + " ");
-        System.out.println();
+      while ((entry = zis.getNextEntry()) != null) {
+        if (entry.getName().equals(zipFileName)) {
+          return zis.readAllBytes();
+        }
+        zis.closeEntry();
       }
     }
-    return new byte[0];
+    throw new IllegalArgumentException("Файл не найден в архиве: " + zipFileName);
   }
 
   @Test
