@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+
+    testImplementation 'com.codeborne:selenide:7.14.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.slf4j:slf4j-api:2.0.17'
+
+    testImplementation 'org.apache.poi:poi:5.2.3'
+
+    implementation 'commons-io:commons-io:2.21.0'
+    implementation 'org.slf4j:slf4j-simple:2.0.9'
+    implementation 'com.codeborne:pdf-test:2.1.0'
+    implementation 'com.codeborne:xls-test:1.7.2'
+    implementation ("org.apache.poi:poi:5.5.1") {exclude group: "org.apache.poi", module: "poi:poi-ooxml"}
+    implementation 'com.opencsv:opencsv:5.12.0'
+    implementation 'com.google.code.gson:gson:2.13.2'
+    implementation("tools.jackson.core:jackson-databind:3.1.0")
+
+    testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.17'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+    implementation("net.lingala.zip4j:zip4j:2.11.6")
+
+}
+
+tasks.register('smoke', Test) {
+    useJUnitPlatform {
+        includeTags("smoke")
+    }
+
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+
+    shouldRunAfter test
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.hw.HwParsingFiles" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-27T08:06:40.908Z" hostname="HW-CIT531-10" time="0.803">
+  <properties/>
+  <testcase name="parsingXlsFromZip()" classname="tests.hw.HwParsingFiles" time="0.372"/>
+  <testcase name="parsingCsvFromZip()" classname="tests.hw.HwParsingFiles" time="0.01"/>
+  <testcase name="parsingPdfFromZip()" classname="tests.hw.HwParsingFiles" time="0.419"/>
+  <system-out><![CDATA[2026-03-27T08:06:40.946865Z Test worker ERROR Log4j API could not find a logging provider.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
