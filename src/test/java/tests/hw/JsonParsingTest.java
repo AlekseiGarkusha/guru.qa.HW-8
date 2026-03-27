@@ -11,7 +11,7 @@ import java.util.List;
 public class JsonParsingTest {
 
   @Test
-  void jsonParsingTest() throws Exception {
+  void jsonParsingTest() {
 
     ObjectMapper mapper = new ObjectMapper();
     InputStream is = getClass().getClassLoader().getResourceAsStream("hwJson.json");
@@ -44,5 +44,4 @@ public class JsonParsingTest {
       }
     }
   }
-
 }

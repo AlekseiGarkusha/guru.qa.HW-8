@@ -34,8 +34,6 @@ public class FileParsingTest {
 
     Assertions.assertEquals("Stefan Bechtold, Sam Brannen, Johannes Link, Matthias Merdes, Marc Philipp, Juliette de Rancourt, Christian Stein", pdf.author);
     System.out.println(downloaded);
-
-    //  href="/images/Upload/Price-Crimea-Electric-2025.pdf"
   }
 
   @Test

@@ -71,7 +71,6 @@ public class HwParsingFiles {
     Assertions.assertArrayEquals(new String[]{"smith79", "5079", "Jamie", "Smith"}, data.get(5));
   }
 
-
   @Test
   void parsingXlsFromZip() throws Exception {
     byte[] content = readEntry("testXlsx.xlsx");
@@ -81,7 +80,3 @@ public class HwParsingFiles {
     Assertions.assertTrue(actualValue.contains("TestData"));
   }
 }
-
-
-
-
