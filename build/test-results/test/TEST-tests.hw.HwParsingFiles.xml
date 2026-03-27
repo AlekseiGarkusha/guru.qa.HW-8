@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.hw.HwParsingFiles" tests="2" skipped="0" failures="1" errors="0" timestamp="2026-03-27T04:38:34.665Z" hostname="DESKTOP-A8CGM4F" time="1.55">
+<testsuite name="tests.hw.HwParsingFiles" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-27T08:57:17.542Z" hostname="HW-CIT531-10" time="0.821">
   <properties/>
-  <testcase name="parsingCsvFromZip()" classname="tests.hw.HwParsingFiles" time="0.06">
-    <failure message="org.opentest4j.AssertionFailedError: array lengths differ, expected: &lt;4&gt; but was: &lt;1&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: array lengths differ, expected: &lt;4&gt; but was: &lt;1&gt;
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at app//org.junit.jupiter.api.AssertArrayEquals.assertArraysHaveSameLength(AssertArrayEquals.java:428)
-	at app//org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:335)
-	at app//org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:159)
-	at app//org.junit.jupiter.api.AssertArrayEquals.assertArrayEquals(AssertArrayEquals.java:155)
-	at app//org.junit.jupiter.api.Assertions.assertArrayEquals(Assertions.java:1452)
-	at app//tests.hw.HwParsingFiles.parsingCsvFromZip(HwParsingFiles.java:62)
-	at java.base@21.0.7/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base@21.0.7/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base@21.0.7/java.util.ArrayList.forEach(ArrayList.java:1596)
-</failure>
-  </testcase>
-  <testcase name="parsingPdfFromZip()" classname="tests.hw.HwParsingFiles" time="1.489"/>
-  <system-out><![CDATA[Тут отображается название файла: [B@398dada8
-Тут отображается название файла: [B@4ddbbdf8
-2026-03-27T04:38:34.879880200Z Test worker ERROR Log4j API could not find a logging provider.
+  <testcase name="parsingXlsFromZip()" classname="tests.hw.HwParsingFiles" time="0.375"/>
+  <testcase name="parsingCsvFromZip()" classname="tests.hw.HwParsingFiles" time="0.01"/>
+  <testcase name="parsingPdfFromZip()" classname="tests.hw.HwParsingFiles" time="0.435"/>
+  <system-out><![CDATA[2026-03-27T08:57:17.577375900Z Test worker ERROR Log4j API could not find a logging provider.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
